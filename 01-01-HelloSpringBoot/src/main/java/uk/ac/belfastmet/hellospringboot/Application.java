@@ -15,5 +15,6 @@ public class Application {
 		
 		logger.info("Hello Spring Boot");
 		logger.info("Hello Again");
+		
 	}
 }
