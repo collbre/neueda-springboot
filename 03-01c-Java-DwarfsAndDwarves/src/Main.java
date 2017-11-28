@@ -20,7 +20,6 @@ public class Main {
 		dwarfs.add(doc);
 		Dwarf grumpy = new Dwarf("Grumpy", "Disney", "Grumpy.png");
 		dwarfs.add(grumpy);
-		
 		Dwarf thorin = new Dwarf("Thorin", "Tolkien", "Thorin.png");
 		dwarfs.add(thorin);
 		Dwarf balin = new Dwarf("Balin", "Tolkien", "Balin.png");
@@ -61,11 +60,5 @@ public class Main {
 				System.out.println("\t" + dwarf.getName() + ": " + dwarf.getImage());
 			}
 		}
-		
-		
-		
 	}
-
-
-
 }

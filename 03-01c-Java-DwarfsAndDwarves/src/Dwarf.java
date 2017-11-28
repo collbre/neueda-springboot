@@ -5,8 +5,6 @@ public class Dwarf {
 	private String author;
 	private String image;
 	
-	
-	
 	public Dwarf(String name, String author, String image) {
 		this.name = name;
 		this.author = author;
