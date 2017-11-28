@@ -5,11 +5,6 @@ public class Dwarf {
 	private String author;
 	private String image;
 	
-	/*public Dwarf(String name, String author, String image) {
-		this.name = name;
-		this.author = author;
-		this.image = image;
-	}*/
 	public Dwarf() {
 	}
 	
@@ -35,11 +30,6 @@ public class Dwarf {
 
 	public void setImage(String image) {
 		this.image = image;
-	}
-	
-	public void printDwarf() {
-		System.out.println("Name: " + getName());
-		System.out.println("Author: " + getAuthor());
 	}
 	
 	
