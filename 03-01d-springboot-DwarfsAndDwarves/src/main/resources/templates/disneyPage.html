@@ -23,12 +23,15 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	      <tr th:each="dwarf : ${dwarfs}" th:if="${dwarf.author} == 'Disney'">
+	      <tr th:each="dwarf : ${dwarfs}">
 	        <td th:text="${dwarf.name}">Sleepy</td>
 	        <td><img src="../static/Sleepy.png" th:src="@{/} + ${dwarf.image}" width="100" height="150" /></td>
 	      </tr>
 	    </tbody>
 	  </table>
+	</div>
+	
+	<div th:replace="layouts/footer :: footerFragment">
 	</div>
 </body>
 </html>

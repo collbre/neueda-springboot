@@ -4,6 +4,7 @@
 	<title th:text="${pageTitle}">Generic Page Title</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 </head>
 
 <body>
@@ -21,6 +22,8 @@
 	    <a href="/tolkien" class="btn btn-primary">Tolkien</a>
 	  </div>
 	</div>
+	
+	<div th:replace="layouts/footer :: footerFragment"> </div>
 	
 </body>
 </html>
