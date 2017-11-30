@@ -11,7 +11,7 @@ import SpringbootLargestBuilding.domain.Volume;
 @Service
 public class LargeBuildingService {
 
-	private ArrayList<FloorArea> floorAreaBuilding;
+	//private ArrayList<FloorArea> floorAreaBuilding;
 	
 	public LargeBuildingService() {
 		
