@@ -8,8 +8,7 @@
 </head>
 
 <body>
-	<nav th:replace="layout/nav :: navFragment">
-	</nav>
+	
 	<div class="jumbotron text-center">
 		<h1>Large Buildings</h1>
 	</div>
@@ -17,9 +16,9 @@
 	<div class="container">
 	  <h4>Largest Buildings by Floor Area, Footprint and Usable Volume</h4>
 	 
-	    <button type="button" class="btn btn-primary btn-lg">Largest Building by Floor Area</button>
-	    <button type="button" class="btn btn-primary btn-lg">Largest Building by Footprint</button>
-	    <button type="button" class="btn btn-primary btn-lg">Largest Building by Usable Volume</button>
+	    <a href="/floor" class="btn btn-primary btn-lg">Largest Building by Floor Area</a>
+	    <a href="/footprint" class="btn btn-primary btn-lg">Largest Building by Footprint</a>
+	    <a href="/volume" class="btn btn-primary btn-lg">Largest Building by Usable Volume</a>
 	  
 	  </div>
 	
