@@ -16,6 +16,30 @@
 	
 	<div class="container">
 	  <h2>Largest Footprint</h2>
+	  <div class="table-responsive">          
+		  <table class="table">
+		    <thead>
+		      <tr>
+		        <th>#</th>
+		        <th>Building Name</th>
+		        <th>Country</th>
+		        <th>City</th>
+		        <th>Footprint</th>
+		        <th>Picture</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr th:each="footprint : ${building}">
+		        <td th:text="${footprint.rank}">1</td>
+		        <td th:text="${footprint.name}">Aalsmeer Flower Auction</td>
+		        <td th:text="${footprint.country}">Netherlands</td>
+		        <td th:text="${footprint.place}">Aalsmeer</td>
+		        <td th:text="${footprint.footprint}">518000</td>
+		        <td><img src="../static/AalsmeerFlowerAuction.png" th:src="${footprint.image}" height="100" width="150"/></td>
+		      </tr>
+		    </tbody>
+		  </table>
+		  </div>
 	</div>
 	
 	

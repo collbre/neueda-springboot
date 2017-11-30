@@ -16,6 +16,32 @@
 	
 	<div class="container">
 	  <h2>Largest Usable Volume</h2>
+	  <div class="table-responsive">          
+		  <table class="table">
+		    <thead>
+		      <tr>
+		        <th>#</th>
+		        <th>Building Name</th>
+		        <th>Country</th>
+		        <th>City</th>
+		        <th>Floor Area</th>
+		        <th>Volume</th>
+		        <th>Picture</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr th:each="volume : ${building}">
+		        <td th:text="${volume.rank}">1</td>
+		        <td th:text="${volume.name}">Boeing Everett Factory</td>
+		        <td th:text="${volume.country}">United States</td>
+		        <td th:text="${volume.place}">Everett, Washington</td>
+		        <td th:text="${volume.area}">398,000</td>
+		        <td th:text="${volume.volume}">13.3 million</td>
+		        <td><img src="../static/BoeingEverettFactory.png" th:src="${volume.image}" height="100" width="150"/></td>
+		      </tr>
+		    </tbody>
+		  </table>
+		  </div>
 	</div>
 	
 	
