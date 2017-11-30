@@ -16,7 +16,7 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 	
-	@PostConstruct
+	/*@PostConstruct
 	public void floorAreaBuilding() {
 		ArrayList<FloorArea> building = new ArrayList<FloorArea>();
 		
@@ -44,5 +44,5 @@ public class Application {
 		for (FloorArea floorArea : building) {
 			System.out.println(floorArea.getName());
 		}
-	}
+	}*/
 }

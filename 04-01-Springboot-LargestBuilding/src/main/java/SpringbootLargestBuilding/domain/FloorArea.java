@@ -6,11 +6,11 @@ public class FloorArea {
 	private String name;
 	private String country;
 	private String place;
-	private int area;
+	private String area;
 	private String image;
 	
 	
-	public FloorArea(int rank, String name, String country, String place, int area, String image) {
+	public FloorArea(int rank, String name, String country, String place, String area, String image) {
 		this.rank = rank;
 		this.name = name;
 		this.country = country;
@@ -43,10 +43,10 @@ public class FloorArea {
 	public void setPlace(String place) {
 		this.place = place;
 	}
-	public int getArea() {
+	public String getArea() {
 		return area;
 	}
-	public void setArea(int area) {
+	public void setArea(String area) {
 		this.area = area;
 	}
 	public String getImage() {
