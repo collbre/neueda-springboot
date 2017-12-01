@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+	<title th:text="${pageTitle}">Generic Page Title</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+</head>
+
+<body>
+	
+	<div class="jumbotron text-center">
+		<h1>UK Singles Chart</h1>
+		<h4>UK Singles chart top 10, from 24th November - 30th November 2017!</h4>
+	</div>
+	
+	<div class="container">
+	  <table class="table table-bordered">
+	    <thead>
+	      <tr>
+	        <th>Position</th>
+	        <th>Artist</th>
+	        <th>Single Title</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr th:each="single : ${singles}">
+	        <td th:text="${single.position}">1</td>
+	        <td th:text="${single.artist}">Camila Cabello ft Young Thug</td>
+	        <td th:text="${single.title}">Havana</td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+
+	
+	
+</body>
+</html>
