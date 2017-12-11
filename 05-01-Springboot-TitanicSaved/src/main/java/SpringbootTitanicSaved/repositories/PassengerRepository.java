@@ -12,6 +12,12 @@ public interface PassengerRepository extends CrudRepository<Passenger, Integer> 
 
 	Iterable<Passenger> findByCabinIsNotNull();
 
+	Iterable<Passenger> findByParchGreaterThan(int i);
+
+	Iterable<Passenger> findBySibSpGreaterThan(int i);
+
+	Iterable<Passenger> findBypClassAndSurvived(int i, int j);
+
 
 
 }

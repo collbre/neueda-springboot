@@ -43,10 +43,24 @@ public class PassengerController {
 		return "passengersPage";
 	}
 	
+	@GetMapping("/first-class-survived")
+	public String firstClassSurvived(Model model) {
+		model.addAttribute("pageTitle", "Passengers");
+		model.addAttribute("passengers", passengerRepository.findBypClassAndSurvived(1, 1));
+		return "passengersPage";
+	}
+	
 	@GetMapping("/second-class")
 	public String secondClass(Model model) {
 		model.addAttribute("pageTitle", "Passengers");
 		model.addAttribute("passengers", passengerRepository.findBypClass(2));
+		return "passengersPage";
+	}
+	
+	@GetMapping("/second-class-survived")
+	public String secondClassSurvived(Model model) {
+		model.addAttribute("pageTitle", "Passengers");
+		model.addAttribute("passengers", passengerRepository.findBypClassAndSurvived(2, 1));
 		return "passengersPage";
 	}
 	
@@ -56,5 +70,28 @@ public class PassengerController {
 		model.addAttribute("passengers", passengerRepository.findBypClass(3));
 		return "passengersPage";
 	}
+	
+	@GetMapping("/third-class-survived")
+	public String thirdClassSurvived(Model model) {
+		model.addAttribute("pageTitle", "Passengers");
+		model.addAttribute("passengers", passengerRepository.findBypClassAndSurvived(3, 1));
+		return "passengersPage";
+	}
+	
+	@GetMapping("/parent-child")
+	public String parch(Model model) {
+		model.addAttribute("pageTitle", "Passengers");
+		model.addAttribute("passengers", passengerRepository.findByParchGreaterThan(0));
+		return "passengersPage";
+	}
+	
+	@GetMapping("/sibling-spouse")
+	public String sibSp(Model model) {
+		model.addAttribute("pageTitle", "Passengers");
+		model.addAttribute("passengers", passengerRepository.findBySibSpGreaterThan(0));
+		return "passengersPage";
+	}
+	
+	
 
 }
