@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+<title>Form</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="jumbotron text-center">
+		<h1>Form Results</h1>
+	</div>
+
+	<div class="container">
+		<p th:text="${'Hello, ' + firstName + ' ' + lastName}"></p>
+	</div>
+
+</body>
+</html>
