@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+<title>Cereal List</title>
+<link rel="stylesheet" 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="jumbotron text-center">
+		<h1>Cereals</h1>
+	</div>
+	
+	<div class="container"></div>
+	
+	<div class="container">
+	  <table class="table table-striped">
+	    <thead>
+	      <tr>
+	      	<th>Manufacturer</th>
+	        <th>Cereal</th>
+	        
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr th:each="cereal : ${cereal}">
+	        <td th:text="${cereal.manufacturerName}">Weetabix</td>
+	        <td th:text="${cereal.cerealName}">Weetos</td>	        
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+	
+</body>
+</html>
