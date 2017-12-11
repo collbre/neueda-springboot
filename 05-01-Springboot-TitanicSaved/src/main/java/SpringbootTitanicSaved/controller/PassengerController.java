@@ -20,8 +20,6 @@ public class PassengerController {
 		this.passengerRepository = passengerRepository;
 	}
 
-
-
 	@GetMapping("/passenger")
 	public String passenger(Model model) {
 		model.addAttribute("pageTitle", "Passengers");
@@ -92,6 +90,25 @@ public class PassengerController {
 		return "passengersPage";
 	}
 	
+	@GetMapping("/embarkedSouthampton")
+	public String embarkedSouthampton(Model model) {
+		model.addAttribute("pageTitle", "Passengers");
+		model.addAttribute("passengers", passengerRepository.findByEmbarked("S"));
+		return "passengersPage";
+	}
 	
-
+	@GetMapping("/embarkedCherbourg")
+	public String embarkedCherbourg(Model model) {
+		model.addAttribute("pageTitle", "Passengers");
+		model.addAttribute("passengers", passengerRepository.findByEmbarked("C"));
+		return "passengersPage";
+	}
+	
+	@GetMapping("/embarkedQueenstown")
+	public String embarkedQueenstown(Model model) {
+		model.addAttribute("pageTitle", "Passengers");
+		model.addAttribute("passengers", passengerRepository.findByEmbarked("Q"));
+		return "passengersPage";
+	}
+	
 }

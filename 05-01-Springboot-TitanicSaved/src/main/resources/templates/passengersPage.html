@@ -26,13 +26,17 @@ body {
 	    <a href="/passenger" class="btn btn-primary btn-sm">All Passengers</a>
 	    <a href="/survivors" class="btn btn-primary btn-sm">Survivors</a>
 	 	<a href="/first-class" class="btn btn-primary btn-sm">First Class Passengers</a>
-	 	<a href="/first-class-survived" class="btn btn-primary btn-sm">First Class Passengers that Survived</a>
+	 	<a href="/first-class-survived" class="btn btn-primary btn-sm">First Class Passengers who Survived</a>
 	 	<a href="/second-class" class="btn btn-primary btn-sm">Second Class Passengers</a>
-	 	<a href="/second-class-survived" class="btn btn-primary btn-sm">Second Class Passengers that Survived</a>
+	 	<a href="/second-class-survived" class="btn btn-primary btn-sm">Second Class Passengers who Survived</a>
 	 	<a href="/third-class" class="btn btn-primary btn-sm">Third Class Passengers</a>
-	 	<a href="/third-class-survived" class="btn btn-primary btn-sm">Third Class Passengers that Survived</a>
+	 	<a href="/third-class-survived" class="btn btn-primary btn-sm">Third Class Passengers who Survived</a>
 	 	<a href="/parent-child" class="btn btn-primary btn-sm">Accompanied by a Parent or Child</a>
 	 	<a href="/sibling-spouse" class="btn btn-primary btn-sm">Accompanied by a Sibling or Spouse</a>
+	 	<a href="/embarkedSouthampton" class="btn btn-primary btn-sm">Embarked at Southampton</a>
+	 	<a href="/embarkedCherbourg" class="btn btn-primary btn-sm">Embarked at Cherbourg</a>
+	 	<a href="/embarkedQueenstown" class="btn btn-primary btn-sm">Embarked as Queenstown</a>
+	 	
 	  </div>
 	
 	<div class="container">
@@ -42,6 +46,10 @@ body {
 	      	<th>Name</th>
 	        <th>Sex</th>
 	        <th>Age</th>
+	        <th>Embarked</th>
+	        <th>Class</th>
+	        <th>Ticket</th>
+	        <th>Fare</th>
 	        
 	      </tr>
 	    </thead>
@@ -50,6 +58,10 @@ body {
 	        <td th:text="${passenger.name}">Braund, Mr. Owen Harris</td>
 	        <td th:text="${passenger.sex}">male</td>
 	        <td th:text="${passenger.age}">22</td>
+	        <td th:text="${passenger.embarked}">S</td>
+	        <td th:text="${passenger.pClass}">3</td>
+	        <td th:text="${passenger.ticket}">A/5 21171</td>
+	        <td th:text="${passenger.fare}">7.25</td>
 	        
 	      </tr>
 	    </tbody>

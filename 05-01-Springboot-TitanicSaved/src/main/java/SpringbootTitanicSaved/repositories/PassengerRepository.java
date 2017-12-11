@@ -18,6 +18,8 @@ public interface PassengerRepository extends CrudRepository<Passenger, Integer> 
 
 	Iterable<Passenger> findBypClassAndSurvived(int i, int j);
 
+	Iterable<Passenger> findByEmbarked(String string);
+
 
 
 }
