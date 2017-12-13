@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+<title th:text="${pageTitle}">Generic Page Title</title>
+<link rel="stylesheet" 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<nav th:replace="layouts/nav :: navFragment">
+	</nav>
+	<div id="section1" class="jumbotron text-center">
+		<h1>The Titanic</h1>
+	</div>
+	
+	<div class="container">
+	    <!-- <a href="/passenger" class="btn btn-primary btn-sm">All Passengers</a> -->
+	    <a class="btn btn-Default" href="/passenger" role="button">All Passengers</a>
+	  <!--   <a href="/survivors" class="btn btn-primary btn-sm">Survivors</a> -->
+	    <a class="btn btn-Default" href="/survivors" role="button">Survivors</a>
+	 	<br /><br />
+	  </div>
+	
+	<div class="container">
+		<div class="alert alert-danger" role="alert" th:if="${message}">
+			<p th:text="${message}"></p>
+		</div>
+		<a class="btn btn-primary" href="/passenger/add" role="button">Add New</a>
+	  <table class="table table-striped">
+	    <thead>
+	      <tr>
+	      	<th>Name</th>
+	        <th>Sex</th>
+	        <th>Links (View Edit Delete)</th>
+	        
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr th:each="passenger : ${passengers}">
+	        <td th:text="${passenger.name}">Braund, Mr. Owen Harris</td>
+	        <td th:text="${passenger.sex}">male</td>
+	        	<td><a class="btn btn-success" th:href="@{passenger/view/} + ${passenger.passengerId}" role="button">View</a> 
+				<a class="btn btn-info" th:href="@{passenger/edit/} + ${passenger.passengerId}" role="button">Edit</a> 
+				<a class="btn btn-danger" th:href="@{passenger/delete/} + ${passenger.passengerId}" role="button">Delete</a> </td>
+		   </tr>
+	    </tbody>
+	  </table>
+	</div>
+
+	
+</body>
+</html>

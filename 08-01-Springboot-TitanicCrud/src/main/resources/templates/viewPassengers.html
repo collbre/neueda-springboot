@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Custom Styles  -->
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+<body>
+<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div class="jumbotron text-center">
+
+		<h1 th:text="${passenger.name}">Braund, Mr. Owen Harris</h1>
+		<br />
+	</div>
+	
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Details</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Sex</td>
+					<td th:text="${passenger.sex}">male</td>
+				</tr>
+				<tr>
+					<td>Survived</td>
+					<td th:text="${passenger.survived}">0</td>
+				</tr>
+				<tr>
+					<td>Class</td>
+					<td th:text="${passenger.pClass}">3</td>
+				</tr>
+				<tr>
+					<td>Embarked at</td>
+					<td th:text="${passenger.embarked}">S</td>
+				</tr>
+				<tr>
+					<td>Ticket Number</td>
+					<td th:text="${passenger.ticket}">A/5 21171</td>
+				</tr>
+				<tr>
+					<td>Fare Paid</td>
+					<td th:text="${passenger.fare}">7.25</td>
+				</tr>
+				<tr>
+					<td>Cabin Number</td>
+					<td th:text="${passenger.cabin}"></td>
+				</tr>
+				<tr>
+					<td>Sibling or Spouse Onboard</td>
+					<td th:text="${passenger.sibSp}">1</td>
+				</tr>
+				<tr>
+					<td>Parent or Child Onboard</td>
+					<td th:text="${passenger.parch}">0</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+</body>
+</html>

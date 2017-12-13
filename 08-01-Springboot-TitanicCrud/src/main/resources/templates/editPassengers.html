@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Custom Styles  -->
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+<body>
+<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div class="jumbotron text-center">
+
+		<h1 th:text="${title}">Create</h1>
+ 		<br />
+	</div>
+	
+	<div class="container">
+		<form class="form-horizontal" th:action="@{/passenger/save}"
+ 			th:object="${passenger}" method="post">
+
+ 			<!-- hidden field is important! -->
+ 			<input type="hidden" th:field="${passenger.passengerId}" />
+ 			
+ 			<div class="form-group">
+ 				<label class="col-md-2">Passenger Name</label>
+				<input type="text" class="form-control"
+						th:field="${passenger.name}" />
+				<span th:if="${#fields.hasErrors('name')}" th:errors="${passenger.name}"
+				th:class="help-block" >Name Errors</span>
+			</div>
+					
+ 			<br />
+ 			
+ 		
+ 			
+ 		<table class="table table-striped">
+ 				<thead>
+ 					<tr>
+ 						<th>Details</th>
+ 					</tr>
+ 				</thead>
+ 				<tbody>
+ 					<tr>
+ 						<td>Sex</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.sex}" /></td>
+ 					</tr>
+ 					 <tr>
+ 						<td>Survived</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.survived}" /></td>
+ 					</tr> 
+ 					<tr>
+ 						<td>Class</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.pClass}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Embarked at</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.embarked}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Ticket Number</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.ticket}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Fare Paid</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.fare}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Cabin Number</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.cabin}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Sibling or Spouse Onboard</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.sibSp}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Parent or Child Onboard</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.parch}" /></td>
+ 					</tr>
+ 				</tbody>
+ 			</table>
+ 			<button type="submit" class="btn btn-primary">Save</button>
+ 		</form>
+	
+	</div>
+	
+	</body>
+</html>

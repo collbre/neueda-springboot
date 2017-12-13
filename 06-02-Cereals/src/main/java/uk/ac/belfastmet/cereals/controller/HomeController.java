@@ -22,8 +22,6 @@ public class HomeController {
 	@Autowired
 	CerealRepository cerealRepository; 
 	
-	
-	
 	public HomeController(CerealRepository cerealRepository) {
 		super();
 		this.cerealRepository = cerealRepository;
