@@ -15,10 +15,11 @@
 	</div>
 	
 	<div class="container">
-	    <!-- <a href="/passenger" class="btn btn-primary btn-sm">All Passengers</a> -->
 	    <a class="btn btn-Default" href="/passenger" role="button">All Passengers</a>
-	  <!--   <a href="/survivors" class="btn btn-primary btn-sm">Survivors</a> -->
 	    <a class="btn btn-Default" href="/survivors" role="button">Survivors</a>
+	    <a class="btn btn-Default" href="/first-class" role="button">First Class Passengers</a>
+	    <a class="btn btn-Default" href="/second-class" role="button">Second Class Passengers</a>
+	    <a class="btn btn-Default" href="/third-class" role="button">Third Class Passengers</a>
 	 	<br /><br />
 	  </div>
 	
@@ -26,6 +27,8 @@
 		<div class="alert alert-danger" role="alert" th:if="${message}">
 			<p th:text="${message}"></p>
 		</div>
+			
+		
 		<a class="btn btn-primary" href="/passenger/add" role="button">Add New</a>
 	  <table class="table table-striped">
 	    <thead>

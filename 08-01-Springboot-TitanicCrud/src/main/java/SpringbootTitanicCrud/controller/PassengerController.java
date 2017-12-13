@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import SpringbootTitanicCrud.domain.Passenger;
@@ -77,12 +78,12 @@ public class PassengerController {
 		}
 	}
 	
-	@GetMapping("/passenger/search")
-	public String search(Model model) {
-		model.addAttribute("pageTitle", "Passengers");
-		model.addAttribute("passengers", passengerRepository.findByNameContaining("%"));
-		return "passengersPage";
-	}
+//	@GetMapping("/passenger/search")
+//	public String search(@RequestParam("searchString") String searchString, Model model) {
+//		model.addAttribute("pageTitle", "Passengers");
+//		model.addAttribute("passengers", passengerRepository.findByNameContaining(searchString));
+//		return "/passenger";
+//	}
 	
 	
 	
