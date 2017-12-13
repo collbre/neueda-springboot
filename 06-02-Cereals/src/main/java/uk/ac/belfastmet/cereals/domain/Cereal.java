@@ -4,50 +4,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+
 @Entity
 public class Cereal {
-	
+
 	@Id
 	@GeneratedValue
 	private Integer cerealId;
+	
+	@NotEmpty
 	private String manufacturerName;
+	@NotEmpty
 	private String cerealName;
 	private Integer energy;
 	private Integer calories;
-	private double protein;
-	private double carbohydrates;
-	private double sugars;
-	private double fat;
-	private double saturates;
-	private double fibre;
-	private double sodium;
-	private double salt;
-	private double iron;
+	private Double protein;
+	private Double carbohydrates;
+	private Double sugars;
+	private Double fat;
+	private Double saturates;
+	private Double fibre;
+	private String sodium;
+	private String salt;
+	private Double iron;
+	
 	
 	public Cereal() {
 		super();
 	}
 
-	public Cereal(Integer cerealId, String manufacturerName, String cerealName, Integer energy, Integer calories, double protein,
-			double carbohydrates, double sugars, double fat, double saturates, double fibre, double sodium, double salt,
-			double iron) {
-		super();
-		this.cerealId = cerealId;
-		this.manufacturerName = manufacturerName;
-		this.cerealName = cerealName;
-		this.energy = energy;
-		this.calories = calories;
-		this.protein = protein;
-		this.carbohydrates = carbohydrates;
-		this.sugars = sugars;
-		this.fat = fat;
-		this.saturates = saturates;
-		this.fibre = fibre;
-		this.sodium = sodium;
-		this.salt = salt;
-		this.iron = iron;
-	}
-	
+
 	public Integer getCerealId() {
 		return cerealId;
 	}
@@ -61,82 +49,132 @@ public class Cereal {
 	public String getManufacturerName() {
 		return manufacturerName;
 	}
-	public void setManufacturerName(String manufacturerName) {
-		this.manufacturerName = manufacturerName;
+
+
+	public void setManufacturerName(String manufacturer) {
+		this.manufacturerName = manufacturer;
 	}
+
+
 	public String getCerealName() {
 		return cerealName;
 	}
-	public void setCerealName(String cerealName) {
-		this.cerealName = cerealName;
+
+
+	public void setCerealName(String name) {
+		this.cerealName = name;
 	}
+
+
 	public Integer getEnergy() {
 		return energy;
 	}
+
+
 	public void setEnergy(Integer energy) {
 		this.energy = energy;
 	}
+
+
 	public Integer getCalories() {
 		return calories;
 	}
+
+
 	public void setCalories(Integer calories) {
 		this.calories = calories;
 	}
-	public double getProtein() {
+
+
+	public Double getProtein() {
 		return protein;
 	}
-	public void setProtein(double protein) {
+
+
+	public void setProtein(Double protein) {
 		this.protein = protein;
 	}
-	public double getCarbohydrates() {
+
+
+	public Double getCarbohydrates() {
 		return carbohydrates;
 	}
-	public void setCarbohydrates(double carbohydrates) {
+
+
+	public void setCarbohydrates(Double carbohydrates) {
 		this.carbohydrates = carbohydrates;
 	}
-	public double getSugars() {
+
+
+	public Double getSugars() {
 		return sugars;
 	}
-	public void setSugars(double sugars) {
+
+
+	public void setSugars(Double sugars) {
 		this.sugars = sugars;
 	}
-	public double getFat() {
+
+
+	public Double getFat() {
 		return fat;
 	}
-	public void setFat(double fat) {
+
+
+	public void setFat(Double fat) {
 		this.fat = fat;
 	}
-	public double getSaturates() {
+
+
+	public Double getSaturates() {
 		return saturates;
 	}
-	public void setSaturates(double saturates) {
+
+
+	public void setSaturates(Double saturates) {
 		this.saturates = saturates;
 	}
-	public double getFibre() {
+
+
+	public Double getFibre() {
 		return fibre;
 	}
-	public void setFibre(double fibre) {
+
+
+	public void setFibre(Double fibre) {
 		this.fibre = fibre;
 	}
-	public double getSodium() {
+
+
+	public String getSodium() {
 		return sodium;
 	}
-	public void setSodium(double sodium) {
+
+
+	public void setSodium(String sodium) {
 		this.sodium = sodium;
 	}
-	public double getSalt() {
+
+
+	public String getSalt() {
 		return salt;
 	}
-	public void setSalt(double salt) {
+
+
+	public void setSalt(String salt) {
 		this.salt = salt;
 	}
-	public double getIron() {
+
+
+	public Double getIron() {
 		return iron;
 	}
-	public void setIron(double iron) {
+
+
+	public void setIron(Double iron) {
 		this.iron = iron;
 	}
 	
 	
-
+	
 }

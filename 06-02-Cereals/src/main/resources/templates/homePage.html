@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+<title>Cereal List</title>
+<link rel="stylesheet" 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="jumbotron text-center">
+		<h1>Cereals</h1>
+	</div>
+	
+	
+	
+	<div class="container">
+		<div class="alert alert-success" role="alert" th:if="${message}">
+			<p th:text="${message}"></p>
+		</div>
+	
+	  <table class="table table-striped">
+	   <thead>
+	     <tr>
+	       <th>Manufacturer</th>
+	       <th>Cereal</th>
+	       <th>Links (View Edit Delete)</th>
+	     </tr>
+	   </thead>
+	   <tbody>
+		   <tr th:each="cereal : ${cereals}">
+			   <td th:text="${cereal.manufacturerName}">Weetabix</td>
+			   <td th:text="${cereal.cerealName}">Weetos</td>
+			   <td><a href="#" th:href="@{cereal/view/} + ${cereal.cerealId}">View</a> 
+					<a href="#" th:href="@{cereal/edit/} + ${cereal.cerealId}">Edit</a> 
+					<a href="#" th:href="@{cereal/delete/} + ${cereal.cerealId}">Delete</a> </td>
+		   </tr>
+	   </tbody>
+	</table>
+	<a class="btn btn-primary" href="/cereal/add" role="button">Add New</a>
+
+	</div>
+	
+</body>
+</html>

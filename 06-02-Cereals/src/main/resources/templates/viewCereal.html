@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Custom Styles  -->
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+
+<body>
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div class="jumbotron text-center">
+
+		<h1 th:text="${cereal.cerealName}">Weetos</h1>
+		<h4 th:text="${cereal.manufacturerName}">Weetabix</h4>
+		<br />
+	</div>
+
+
+	<div class="container">
+
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Nutrition</th>
+					<th>Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Energy</td>
+					<td th:text="${cereal.energy}">1594</td>
+				</tr>
+				<tr>
+					<td>Calories</td>
+					<td th:text="${cereal.calories}">377</td>
+				</tr>
+				<tr>
+					<td>Protein</td>
+					<td th:text="${cereal.protein}">8.4</td>
+				</tr>
+				<tr>
+					<td>Carbohydrate</td>
+					<td th:text="${cereal.carbohydrates}">0</td>
+				</tr>
+				<tr>
+					<td>Sugars</td>
+					<td th:text="${cereal.sugars}">23.5</td>
+				</tr>
+				<tr>
+					<td>Fat</td>
+					<td th:text="${cereal.fat}">4.9</td>
+				</tr>
+				<tr>
+					<td>Saturates</td>
+					<td th:text="${cereal.saturates}">1</td>
+				</tr>
+				<tr>
+					<td>Fibre</td>
+					<td th:text="${cereal.fibre}">6.2</td>
+				</tr>
+				<tr>
+					<td>Sodium</td>
+					<td th:text="${cereal.sodium}">0.09</td>
+				</tr>
+				<tr>
+					<td>Salt</td>
+					<td th:text="${cereal.salt}">0.23</td>
+				</tr>
+				<tr>
+					<td>Iron</td>
+					<td th:text="${cereal.iron}">11.9</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
