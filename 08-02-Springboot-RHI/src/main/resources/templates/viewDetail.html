@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Custom Styles  -->
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+	
+			<h1 th:text="${rhi.name}">Aaron Newell</h1>
+			<br />
+		</div>
+	</div>
+	
+	<div class="container">
+
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Date of Application</td>
+					<td th:text="${rhi.dateOfApplication}">04/09/2015</td>
+				</tr>
+				<tr>
+					<td>Location</td>
+					<td th:text="${rhi.businessOrInstallationLocation}">BT39</td>
+				</tr>
+				<tr>
+					<td>Technology Type</td>
+					<td th:text="${rhi.technologyTypeInstallation}">Solid Biomass Boiler</td>
+				</tr>
+				<tr>
+					<td>Capacity</td>
+					<td th:text="${rhi.capacity}">60</td>
+				</tr>
+				<tr>
+					<td>Payments Made</td>
+					<td th:text="${rhi.amountOfPayments}">19084.7</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

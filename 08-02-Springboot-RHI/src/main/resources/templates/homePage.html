@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+<title th:text="${pageTitle}">Generic Page Title</title>
+<link rel="stylesheet" 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Renewable Heat Incentive</h1>
+			<h4>The Ash for Cash Payments</h4>
+			<h6>Made by 28 February 2017</h6>
+		</div>
+	</div>
+
+	<div class="container">
+	  <table class="table table-striped">
+	    <thead>
+	      <tr>
+	      	<th>Name</th>
+	      	<th>Links (View Edit Delete)</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr th:each="rhi : ${rhi}">
+	        <td th:text="${rhi.name}">Aaron Newell</td>
+	        	<td><a class="btn btn-success" th:href="@{rhi/view/} + ${rhi.rhiId}" role="button">View</a> 
+					<a class="btn btn-info" th:href="@{rhi/edit/} + ${rhi.rhiId}" role="button">Edit</a> 
+					<a class="btn btn-danger" th:href="@{rhi/delete/} + ${rhi.rhiId}" role="button">Delete</a> </td>
+
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+	
+</body>
+</html>
