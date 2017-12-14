@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -85,6 +86,25 @@ public class PassengerController {
 //		return "/passenger";
 //	}
 	
+	@PostMapping("/passenger/search")
+	public String search(@RequestParam("searchField") String searchField, 
+			@RequestParam("searchString") String searchString, Model model) {
+		
+		if(searchField.equals("name")) {
+			model.addAttribute("pageTitle", "Search Results");
+			model.addAttribute("passengers", passengerRepository.findByNameContaining(searchString));
+			
+		}else if(searchField.equals("embarked")) {
+			model.addAttribute("pageTitle", "Search Results");
+			model.addAttribute("passengers", passengerRepository.findByEmbarked(searchString));
+			
+		}else if(searchField.equals("pClass")) {
+			Integer pClass = Integer.parseInt(searchString);
+			model.addAttribute("pageTitle", "Search Results");
+			model.addAttribute("passengers", passengerRepository.findBypClass(pClass));
+		}
+		return "passengersPage";
+	}
 	
 	
 	

@@ -11,7 +11,7 @@
 	<nav th:replace="layouts/nav :: navFragment">
 	</nav>
 	<div id="section1" class="jumbotron text-center">
-		<h1>The Titanic</h1>
+		<h1>Passenger Information</h1>
 	</div>
 	
 	<div class="container">
@@ -27,9 +27,19 @@
 		<div class="alert alert-danger" role="alert" th:if="${message}">
 			<p th:text="${message}"></p>
 		</div>
-			
-		
 		<a class="btn btn-primary" href="/passenger/add" role="button">Add New</a>
+		<br /><br />
+		
+		<form action="/passenger/search" method="POST" id="searchForm">
+			<select class="selectpicker col-sm-2" data-style="btn-primary" form="searchForm" name="searchField">
+				<option value="name">Name</option>
+				<option value="embarked">Embarked</option>
+				<option value="pClass">Passenger Class</option>
+			</select>
+			<input type="text" class="col-sm-6" name="searchString" form="searchForm"></input>
+			<button type="submit" value="search" form="searchForm" class="btn btn-primary col-sm-2">Search</button>
+		</form>
+		
 	  <table class="table table-striped">
 	    <thead>
 	      <tr>
@@ -43,9 +53,9 @@
 	      <tr th:each="passenger : ${passengers}">
 	        <td th:text="${passenger.name}">Braund, Mr. Owen Harris</td>
 	        <td th:text="${passenger.sex}">male</td>
-	        	<td><a class="btn btn-success" th:href="@{passenger/view/} + ${passenger.passengerId}" role="button">View</a> 
-				<a class="btn btn-info" th:href="@{passenger/edit/} + ${passenger.passengerId}" role="button">Edit</a> 
-				<a class="btn btn-danger" th:href="@{passenger/delete/} + ${passenger.passengerId}" role="button">Delete</a> </td>
+	        	<td><a class="btn btn-success" th:href="@{/passenger/view/} + ${passenger.passengerId}" role="button">View</a> 
+				<a class="btn btn-info" th:href="@{/passenger/edit/} + ${passenger.passengerId}" role="button">Edit</a> 
+				<a class="btn btn-danger" th:href="@{/passenger/delete/} + ${passenger.passengerId}" role="button">Delete</a> </td>
 		   </tr>
 	    </tbody>
 	  </table>

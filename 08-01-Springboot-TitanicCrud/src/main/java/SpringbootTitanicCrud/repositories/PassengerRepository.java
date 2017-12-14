@@ -24,4 +24,6 @@ public interface PassengerRepository extends CrudRepository<Passenger, Integer> 
 
 	Iterable<Passenger> findByNameContaining(String string);
 
+	Iterable<Passenger> findByName(String searchField);
+
 }

@@ -19,7 +19,7 @@
 <nav th:replace="layouts/nav :: navFragment"></nav>
 	<div class="jumbotron text-center">
 
-		<h1 th:text="${passenger.name}">Braund, Mr. Owen Harris</h1>
+		<h1>Passenger Information</h1>
 		<br />
 	</div>
 	
@@ -27,7 +27,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Details</th>
+					<th th:text="${passenger.name}">Braund, Mr. Owen Harris</th>
 					
 				</tr>
 			</thead>
