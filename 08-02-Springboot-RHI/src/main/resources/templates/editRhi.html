@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Custom Styles  -->
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+<body>
+
+<div class="container">
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+		<div class="jumbotron">
+			<h1>Renewable Heat Incentive</h1>
+			<h1 th:text="${title}">Create</h1>
+		</div>
+	</div>
+
+
+		<h1 th:text="${title}">Create</h1>
+ 		<br />
+	
+	<div class="container">
+		<form class="form-horizontal" th:action="@{/rhi/save}"
+ 			th:object="${rhi}" method="post">
+
+ 			<!-- hidden field is important! -->
+ 			<input type="hidden" th:field="${rhi.rhiId}" />
+ 			
+ 			<div class="form-group">
+ 				<label class="col-md-2">Recipient Name</label>
+				<input type="text" class="form-control"
+						th:field="${rhi.name}" />
+				<span th:if="${#fields.hasErrors('name')}" th:errors="${rhi.name}"
+				th:class="help-block" >Name Errors</span>
+			</div>
+					
+ 			<br />
+ 			
+ 		
+ 			
+ 		<table class="table table-striped">
+ 				<thead>
+ 					<tr>
+ 						<th>Details</th>
+ 					</tr>
+ 				</thead>
+ 				<tbody>
+ 					<tr>
+ 						<td>Date of Application</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${rhi.dateOfApplication}" /></td>
+ 					</tr>
+ 					 <tr>
+ 						<td>Install Location</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${rhi.businessOrInstallationLocation}" /></td>
+ 					</tr> 
+ 					<tr>
+ 						<td>Type of Technology</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${rhi.technologyTypeInstallation}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Capacity</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${rhi.capacity}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Amount Paid Out</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${rhi.amountOfPayments}" /></td>
+ 					</tr>
+ 				</tbody>
+ 			</table>
+ 			<button type="submit" class="btn btn-primary">Save</button>
+ 		</form>
+	
+	</div>
+	
+	</body>
+</html>

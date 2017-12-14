@@ -18,9 +18,9 @@
 <body>
 	<div class="container">
 		<div class="jumbotron">
-	
-			<h1 th:text="${rhi.name}">Aaron Newell</h1>
-			<br />
+			<h1>Renewable Heat Incentive</h1>
+			<h4>The Ash for Cash Payments</h4>
+			<h6>Made by 28 February 2017</h6>
 		</div>
 	</div>
 	
@@ -30,14 +30,14 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Details</th>
+					<th th:text="${rhi.name}">Aaron Newell</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+			<tr>
 					<td>Date of Application</td>
 					<td th:text="${rhi.dateOfApplication}">04/09/2015</td>
-				</tr>
+				</tr> 
 				<tr>
 					<td>Location</td>
 					<td th:text="${rhi.businessOrInstallationLocation}">BT39</td>

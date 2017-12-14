@@ -6,4 +6,8 @@ import uk.ac.belfastmet.rhi.domain.Rhi;
 
 public interface RhiRepository extends CrudRepository<Rhi, Integer> {
 
+	Iterable<Rhi> findByCapacity(Integer capacity);
+
+	Iterable<Rhi> findByNameContaining(String searchString);
+
 }

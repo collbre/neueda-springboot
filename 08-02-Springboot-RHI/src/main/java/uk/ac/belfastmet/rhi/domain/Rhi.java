@@ -22,6 +22,7 @@ public class Rhi {
 	public Rhi() {
 		super();
 	}
+	
 	public Rhi(Integer rhiId, String name, String dateOfApplication, String businessOrInstallationLocation,
 			String technologyTypeInstallation, Integer capacity, Float amountOfPayments) {
 		super();
