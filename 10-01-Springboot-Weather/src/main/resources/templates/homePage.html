@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+<title th:text="${pageTitle}">Generic Page Title</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Custom Styles  -->
+
+</head>
+
+<body>
+	<div class="container">
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+		<div class="jumbotron">
+			<h1>Renewable Heat Incentive</h1>
+			<h4>The Ash for Cash Payments</h4>
+			<h6>Made by 28 February 2017</h6>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="alert alert-danger" role="alert" th:if="${message}">
+			<p th:text="${message}"></p>
+		</div>
+		<a class="btn btn-primary" href="/rhi/add" role="button">Add New</a>
+		<br /><br />
+		
+		<form action="/rhi/search" method="POST" id="searchForm">
+			<select class="col-sm-2" form="searchForm" name="searchField">
+				<option value="name">Name</option>
+				<option value="capacity">Capacity</option>
+			</select>
+			<input type="text" class="col-sm-6" name="searchString" form="searchForm"></input>
+			<button type="submit" value="search" form="searchForm" class="btn btn-primary col-sm-2">Search</button>
+		</form>
+		<br />
+		
+	  <table class="table table-striped">
+	    <thead>
+	      <tr>
+	      	<th>Name</th>
+	      	<th>Links (View Edit Delete)</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr th:each="rhi : ${rhi}">
+	        <td th:text="${rhi.name}">Aaron Newell</td>
+	        	<td><a class="btn btn-success" th:href="@{/rhi/view/} + ${rhi.rhiId}" role="button">View</a> 
+					<a class="btn btn-info" th:href="@{/rhi/edit/} + ${rhi.rhiId}" role="button">Edit</a> 
+					<a class="btn btn-danger" th:href="@{/rhi/delete/} + ${rhi.rhiId}" role="button">Delete</a>
+				</td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+	
+</body>
+</html>

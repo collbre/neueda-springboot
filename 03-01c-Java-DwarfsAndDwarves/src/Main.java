@@ -50,14 +50,14 @@ public class Main {
 		System.out.println("Snow White's Dwarfs are:");
 		for (Dwarf dwarf : dwarfs) {
 			if(dwarf.getAuthor().equals("Disney")) {
-				System.out.println("\t" + dwarf.getName() + ": " + dwarf.getImage());
+				System.out.println("\t" + dwarf.getName() + "\t: " + dwarf.getImage());
 			}
 		}
 		
 		System.out.println("\nThe Company of Thorin are:");
 		for (Dwarf dwarf : dwarfs) {
 			if(dwarf.getAuthor().equals("Tolkien")) {
-				System.out.println("\t" + dwarf.getName() + ": " + dwarf.getImage());
+				System.out.println("\t" + dwarf.getName() + "\t: " + dwarf.getImage());
 			}
 		}
 	}
