@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+<title th:text="${pageTitle}">Generic Page Title</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+	<nav th:replace="layouts/nav :: navFragment"></nav>
+	<div class="jumbotron text-center">
+		<h1>Weather</h1>
+		<h4 th:text="${pageLocation}">Location</h4>
+	</div>
+	
+	<div class="container text-cente">
+	<table class="table">
+	    <thead>
+	      <tr>
+	      	<th>Description</th>
+	      	<th>Percipitation</th>
+	      	<th>Temperature</th>
+	      	<th>Humidity</th>
+	      	<th>pressure</th>
+	      	<th>Cloudcover</th>
+	      	<th>Wind Speed</th>
+	      	<th>Wind Direction</th>
+	      	<th> </th>
+	      	
+	      </tr>
+	    </thead>
+	    <tbody>
+		   <tr th:each="weather : ${weather}">
+			   <td th:text="${weather.description}">Raining</td>
+			   <td th:text="${weather.precipitation}">Rain</td>
+			   <td th:text="${weather.temperature}">8</td>
+			   <td th:text="${weather.humidity}">50%</td>
+			   <td th:text="${weather.pressure}">1110</td>
+			   <td th:text="${weather.cloudcover}">6</td>
+			   <td th:text="${weather.wind.speed}"></td>
+			   <td th:text="${weather.wind.direction}"></td>
+			   <td><img th:src="${weather.image}" width="200" height="200"/></td>	
+		   </tr>
+		   </tbody>
+		   </table>
+	</div>
+	
+</body>
+</html>

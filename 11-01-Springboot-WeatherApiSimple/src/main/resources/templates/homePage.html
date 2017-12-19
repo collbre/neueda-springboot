@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+<title th:text="${pageTitle}">Generic Page Title</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+	
+	<div class="jumbotron text-center">
+		<h1>Weather</h1>
+		<h4 th:text="${pageLocation}">Location</h4>
+	</div>
+	
+	<div class="container text-cente">
+		 <a href="/belfast" class="btn btn-primary btn-lg">Belfast</a>
+	    <a href="/dublin" class="btn btn-primary btn-lg">Dublin</a>
+	    <a href="/london" class="btn btn-primary btn-lg">London</a>
+	</div>
+	
+</body>
+</html>
