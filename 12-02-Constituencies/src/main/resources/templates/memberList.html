@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+<title th:text="${pageTitle}">Generic Page Title</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+	
+	<div class="jumbotron text-center">
+		<h1>Constituencies</h1>
+	</div>
+	
+	<div class="container">
+	
+	<table class="table table-border">
+	    <thead>
+	      <tr>
+	      	<th></th>
+	        <th>Firstname</th>
+	        <th>Surname</th>
+	        <th>Title</th>
+	        <th>Political Party</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr th:each="member : ${members}">
+	      	<td><img src="" th:src="@{http://aims.niassembly.gov.uk/images/mla/} + ${member.personId} + '_s.jpg'"/></td>
+	        <td th:text="${member.memberFirstName}"></td>
+	        <td th:text="${member.memberLastName}"></td>
+	        <td th:text="${member.memberTitle}"></td>
+	        <td th:text="${member.partyName}"></td>
+	      </tr>
+	     
+	    </tbody>
+	  </table>
+	
+	</div>
+</body>	
+</html>
