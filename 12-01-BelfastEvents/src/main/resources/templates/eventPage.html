@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
+<head>
+<title th:text="${pageTitle}">Generic Page Title</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+	
+	<div class="jumbotron text-center">
+		<h1>Event:</h1>
+		<h4 th:text="${event.title}"></h4>
+		<h4 th:text="${event.venue}"></h4>
+	</div>
+	
+	<div class="container text-center">
+		<table class="table">
+			
+			<tbody>
+				<tr>
+					<td></td>
+					<td><img th:src="${event.image}" width="300" height="200"/></td>
+				</tr>
+				<tr >
+					<td>Starts at</td>
+					<td th:if="${event.startDate != null}" th:text="${#dates.format(event.startDate, 'dd/MM/yyyy')}"></td>
+				</tr>				
+			 	<tr>
+					<td>Ends at</td>
+					<td th:if="${event.endDate != null}" th:text="${#dates.format(event.endDate, 'dd/MM/yyyy')}"></td>
+					<!-- <td th:if="${event.endDate == null}" th:text="null"></td> -->
+				</tr>
+				<!-- <tr>
+					<td>Time</td>
+					<td th:text="${event.time}"></td>
+				</tr>
+				<tr>
+					<td>Suitable for</td>
+					<td th:text="${event.audience}"></td>
+				</tr>
+				<tr>
+					<td>Theme</td>
+					<td th:text="${event.theme}"></td>
+				</tr> -->
+				<tr>
+					<td>Costs</td>
+					<td th:text="${event.cost}"></td>
+				</tr>
+				<tr>
+					<td>Additional Info</td>
+					<td th:utext="${event.content}"></td>
+				</tr> 
+				
+			</tbody>
+		</table>
+	</div>
+	
+	<!-- <div th:switch="${event.venueUrl}">
+		<p th:case="''" th:text="${event.venue}">Venue has no link</p>
+		<p th:case="*"><a href="" th:href="${event.venueUrl}" th:text=${event.venue} target=_blank>Venue ha a link</a></p>
+	</div> -->
+	
+</body>
+</html>
